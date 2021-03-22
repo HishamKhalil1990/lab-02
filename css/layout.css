@@ -1,0 +1,50 @@
+header{
+    height: 120px;
+    position: relative;
+    margin-bottom: 90px;
+}
+#headerDiv{
+    position: absolute;
+    left: 34%;
+    top: -20px;
+    height: 125px;
+    width: 34%;
+    border: solid 1px black;
+    text-align: center;
+}
+h1{
+    margin: 20px;
+    font-size: 20px;
+    font-family: 'Della Respira', serif;
+}
+select{
+    margin-top: 0px;
+}
+div{
+    width:25%;
+    overflow: auto;
+    height: 250px;
+    margin-top: 60px;
+    text-align: center;
+    border: solid 1px cyan;
+    float: left;
+}
+h2{
+    padding-top: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+img{
+    padding-top: 15px;
+    height: 70%;
+    width: 100%;
+    padding-bottom: 15px;
+}
+footer{
+    clear: both;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+p{
+    font-family: 'Staatliches', cursive;
+}
+
