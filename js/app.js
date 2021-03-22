@@ -10,7 +10,7 @@ function Card(image_url,title,description,keyword,horns){
 Card.prototype.render = function(keyword){
     for (let i = 0 ; i < cards.length ; i++){
         if (cards[i].keyword == keyword){
-            let object = `<div><h2>${cards[i].title}</h2><img src=${cards[i].image_url}><p>${cards[i].description}</p></div>`
+            let object = `<div><h2>${cards[i].title}</h2><img src=${cards[i].image_url}><p>${cards[i].description}</p></div>`;
             $('main').append(object);
         }
     }
@@ -19,7 +19,7 @@ $(document).ready(renderImages);
 function renderImages() {
     const settings = {
         method: 'get',
-        dataType: 'json'
+        dataType: 'json',
     }
     $.ajax('../data/page-1.json', settings)
         .then(data =>{
