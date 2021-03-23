@@ -21,7 +21,7 @@ function renderImages() {
         method: 'get',
         dataType: 'json',
     }
-    $.ajax('data/page-1.json', settings)
+    $.ajax('./../data/page-1.json', settings)
         .then(data =>{
             data.forEach((element) => {
                 new Card(element.image_url,element.title,element.description,element.keyword,element.horns);
