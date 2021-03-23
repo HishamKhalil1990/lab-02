@@ -102,6 +102,7 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
                 }
             });
         });
+    })
 }
 
 function emptyAll(){
