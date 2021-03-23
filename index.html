@@ -12,9 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Chango&family=Della+Respira&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Della+Respira&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chango&family=Della+Respira&family=Yanone+Kaffeesatz&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Chango&family=Della+Respira&family=Staatliches&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Chango&family=Della+Respira&family=Staatliches&family=Yanone+Kaffeesatz&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -32,12 +36,21 @@
         <label for="">sort by title</label>
         <input type="checkbox" value="sort2">
         <label for="">sort by horns</label><br>
-        <button type="button" value="page1">page 1</button>
-        <button type="button" value="page2">page 2</button>
+        <button id="btu1" type="button" value="page1">page 1</button>
+        <button id="btu2" type="button" value="page2">page 2</button>
     </form>
     <main>
 
     </main>
+    <template id="card" type="text/x-tmpl-mustache">
+        <div>
+            <h2>{{title}}</h2>
+            <img src={{image_url}}>
+            <p>{{description}}</p>
+            <p>keyword: {{keyword}}</p>
+            <p>no of horns: {{horns}}</p>
+        </div>
+    </template>
     <footer>
         © 2018 Code Fellows
     </footer>

@@ -12,8 +12,11 @@ function Card(image_url, title, description, keyword, horns) {
 
 Card.prototype.render = function (keyword) {
     if (this.keyword == keyword) {
-        let object = `<div><h2>${this.title}</h2><img src=${this.image_url}><p>${this.description}</p></div>`;
-        $('main').append(object);
+        let cardTemplate = $('#card').html();
+        console.log(cardTemplate);
+        let cardHtmlData = Mustache.render(cardTemplate,this);
+        $('main').append(cardHtmlData);
+        console.log($('main'));
     }
 }
 
