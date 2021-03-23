@@ -60,11 +60,8 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
         method: 'get',
         dataType: 'json',
     }
-
     $.ajax(pageSrc, settings)
         .then(data => {
-    $.ajax('./../data/page-1.json', settings)
-        .then(data =>{
             data.forEach((element) => {
                 new Card(element.image_url, element.title, element.description, element.keyword, element.horns);
                 let noOfOptions = optionArray.length;
@@ -106,6 +103,7 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
             });
         });
 }
+
 function emptyAll(){
     optionArray = [];
     cards = [];
