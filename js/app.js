@@ -22,7 +22,7 @@ $(document).ready(renderImages);
 
 function renderImages() {
     $('form').children().eq(0).prop("checked", true);
-    let pageSrc = '.data/page-1.json';
+    let pageSrc = 'data/page-1.json';
     let pageSort = 'sort1';
     let optionValue = 'filter by the keyword';
     pageDataPreparing(pageSrc,pageSort,optionValue)
@@ -125,3 +125,4 @@ function sortByHorns(cards){
         return a.horns - b.horns;
     });
 }
+
