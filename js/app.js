@@ -10,13 +10,11 @@ function Card(image_url, title, description, keyword, horns) {
     cards.push(this);
 }
 
-Card.prototype.render = function (keyword) {
-    if (this.keyword == keyword) {
+Card.prototype.render = function (optvalue) {
+    if (this.keyword == optvalue || 'filter by the keyword' == optvalue) {
         let cardTemplate = $('#card').html();
-        console.log(cardTemplate);
         let cardHtmlData = Mustache.render(cardTemplate,this);
         $('main').append(cardHtmlData);
-        console.log($('main'));
     }
 }
 
@@ -26,7 +24,7 @@ function renderImages() {
     $('form').children().eq(0).prop("checked", true);
     let pageSrc = './../data/page-1.json';
     let pageSort = 'sort1';
-    let optionValue = null;
+    let optionValue = 'filter by the keyword';
     pageDataPreparing(pageSrc,pageSort,optionValue)
     $('select').on('change', () => {
         $('main').empty();
@@ -43,7 +41,7 @@ function renderImages() {
         } else if (pageNo == 'page2'){
             pageSrc = './../data/page-2.json'
         }
-        optionValue = null;
+        optionValue = 'filter by the keyword';
         pageDataPreparing(pageSrc,pageSort,optionValue);
     })
     $('input').on('click',(event) => {
@@ -79,6 +77,7 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
                 }
             });
             optionArray.sort((a,b) => {
+                console.log(a,b);
                 if (a.toUpperCase() < b.toUpperCase()){
                     return -1
                 } else if (a.toUpperCase() == b.toUpperCase()){
@@ -87,6 +86,7 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
                     return 1
                 }
             });
+            optionArray.unshift('filter by keyword');
             optionArray.forEach(element => {
                 $('select').append(`<option value="${element}">${element}</option>`)
             })
@@ -96,11 +96,7 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
                 sortByHorns(cards);
             }
             cards.forEach(element => {
-                if (optionValue == null){
-                    element.render($('select').val());
-                }else{
-                    element.render(optionValue);
-                }
+                element.render(optionValue);
             });
         });
 }
