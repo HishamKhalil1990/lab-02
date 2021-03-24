@@ -61,7 +61,7 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
         dataType: 'json',
     }
 
-    $.ajax('./../data/page-1.json', settings)
+    $.ajax(pageSrc, settings)
         .then(data =>{
             data.forEach((element) => {
                 new Card(element.image_url, element.title, element.description, element.keyword, element.horns);
