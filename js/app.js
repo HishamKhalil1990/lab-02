@@ -61,8 +61,6 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
         dataType: 'json',
     }
 
-    $.ajax(pageSrc, settings)
-        .then(data => {
     $.ajax('./../data/page-1.json', settings)
         .then(data =>{
             data.forEach((element) => {
@@ -105,7 +103,6 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
                 }
             });
         });
-    })
 }
 
 function emptyAll(){
