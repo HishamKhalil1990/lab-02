@@ -62,8 +62,6 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
     }
 
     $.ajax(pageSrc, settings)
-        .then(data => {
-    $.ajax('./../data/page-1.json', settings)
         .then(data =>{
             data.forEach((element) => {
                 new Card(element.image_url, element.title, element.description, element.keyword, element.horns);
@@ -105,7 +103,6 @@ function pageDataPreparing(pageSrc,pageSort,optionValue) {
                 }
             });
         });
-    })
 }
 
 function emptyAll(){
