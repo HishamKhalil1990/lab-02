@@ -24,7 +24,7 @@ $(document).ready(renderImages);
 
 function renderImages() {
     $('form').children().eq(0).prop("checked", true);
-    let pageSrc = './../data/page-1.json';
+    let pageSrc = 'data/page-1.json';
     let pageSort = 'sort1';
     let optionValue = null;
     pageDataPreparing(pageSrc,pageSort,optionValue)
@@ -39,9 +39,9 @@ function renderImages() {
         emptyAll();
         let pageNo = event.target.value;
         if (pageNo == 'page1'){
-            pageSrc = './../data/page-1.json';
+            pageSrc = 'data/page-1.json';
         } else if (pageNo == 'page2'){
-            pageSrc = './../data/page-2.json'
+            pageSrc = 'data/page-2.json'
         }
         optionValue = null;
         pageDataPreparing(pageSrc,pageSort,optionValue);
